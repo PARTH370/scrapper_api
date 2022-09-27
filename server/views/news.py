@@ -10,7 +10,7 @@ router = APIRouter()
 @router.post("/", response_description="Add Body Part")
 async def news():
     # schema = jsonable_encoder(schema)
-    driver=await get_driver()
+    driver= get_driver()
     url= 'https://www.news18.com/topics/showsha-exclusives/'
     driver.get(url)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

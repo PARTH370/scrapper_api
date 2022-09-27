@@ -9,6 +9,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, WebDriverException
 import logging
+import os
+BASE_DIR = os.getcwd()
+print(BASE_DIR)
 from webdriver_manager.chrome import ChromeDriverManager
 def get_driver():
     options = Options()
@@ -18,7 +21,7 @@ def get_driver():
     options.add_argument("start-maximized")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-extensions")
-    browser = webdriver.Chrome( ChromeDriverManager().install(),chrome_options=options)
+    browser = webdriver.Chrome( BASE_DIR+chr(92)+str('chromedriver.exe'),chrome_options=options)
     return browser
 
 

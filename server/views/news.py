@@ -13,7 +13,7 @@ async def news():
     driver= get_driver()
     url= 'https://www.news18.com/topics/showsha-exclusives/'
     driver.get(url)
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     data=[]
     # time.sleep(8)
     img_url=driver.find_elements(By.CSS_SELECTOR, "img.jsx-470016334.lazyloaded")

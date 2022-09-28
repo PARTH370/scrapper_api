@@ -24,5 +24,5 @@ async def news():
         temp["Price"] = headline[j].text
         data.append(temp)
         # temp["Price"] = price[j].text
-    driver.close()
+    # driver.close()
     return {"username": data}

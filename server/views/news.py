@@ -13,12 +13,12 @@ async def news():
     driver= get_driver()
     url= 'https://www.news18.com/topics/showsha-exclusives/'
     driver.get(url)
-    # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     data=[]
     # time.sleep(8)
     img_url=driver.find_elements(By.CSS_SELECTOR, "img.jsx-470016334.lazyloaded")
     headline=driver.find_elements(By.CSS_SELECTOR, "p.jsx-470016334")
-    for j in range(5):
+    for j in range(min(len(img_url),len(headline))):
         temp={}
         temp["Product"] = img_url[j].get_attribute('src')
         temp["Price"] = headline[j].text

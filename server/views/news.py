@@ -18,6 +18,7 @@ async def news():
     # time.sleep(8)
     img_url=driver.find_elements(By.CSS_SELECTOR, "img.jsx-470016334.lazyloaded")
     headline=driver.find_elements(By.CSS_SELECTOR, "p.jsx-470016334")
+    print(len(img_url),len(headline))
     for j in range(min(len(img_url),len(headline))):
         temp={}
         temp["Product"] = img_url[j].get_attribute('src')

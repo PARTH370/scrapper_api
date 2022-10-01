@@ -12,14 +12,13 @@ import os
 from webdriver_manager.chrome import ChromeDriverManager
 def get_driver():
     options = Options()
-    options = Options()
-    options.add_argument("--headless")
-    options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
-    options.add_argument("--no-sandbox")
-    options.add_argument("start-maximized")
-    options.add_argument("disable-infobars")
-    options.add_argument("--disable-extensions")
-    # browser = webdriver.Chrome( ChromeDriverManager().install(),chrome_options=options)
-    return webdriver.Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), chrome_options=options)
+    # options.add_argument("--headless")
+    # options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+    # options.add_argument("--no-sandbox")
+    # options.add_argument("start-maximized")
+    # options.add_argument("disable-infobars")
+    # options.add_argument("--disable-extensions")
+    return webdriver.Chrome( ChromeDriverManager().install(),chrome_options=options)
+    # return webdriver.Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), chrome_options=options)
 
 

@@ -41,7 +41,10 @@ def get_city(state):
     data = json.load(f)
     s=""
     for i in state.split():
-        s+=i.capitalize()+" "
+        if i in ['and',"And",'aNd','anD','AND','of','OF','oF','Of','del','da','Da','DA','LA','dA','Del']:
+            s+=i.lower()+" "
+        else:
+            s+=i.capitalize()+" "
     s=s.strip()
     return data[s]
     

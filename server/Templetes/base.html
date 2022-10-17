@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>Input Card</h2>
+  
+  <div class="w3-card-4">
+    <div class="w3-container w3-green">
+      <h2>Input Form</h2>
+    </div>
+
+    <form class="w3-container">
+      <p>
+      <input class="w3-input" type="text" id="URL" value="">
+      <label>URL</label></p>
+      <p>     
+      <input class="w3-input" type="text" id="xpath" value="">
+      <label>X PATH</label></p>
+
+      <input class="btn btn-success" type="submit" value="submit" onclick = "save()"/>
+    </form>
+    
+  </div>
+</div>
+<!-- document.getElementById('First').value  -->
+<!-- $('#First').value -->
+<script>
+    
+        
+    
+    function save(){
+        window.alert("datra")
+        bootbox.confirm({
+            message: "Are you sure to search",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if(result){
+                    var dict={}
+                        
+                    $.ajax({                       
+                        type: 'POST',
+                        url: "",
+                        data: 'form',
+                        traditional: true,
+                        cache: false,
+                            success: function (data) {   
+                            if (data.is_taken){
+                                                  make_alert("success","Breakpoint updated successfully!"); 
+                                
+                            }
+                            else {
+                                
+                                make_alert("fail","Breakpoint Added successfully!");
+                                
+                            }
+                            
+                        },
+                        error: function (jqXHR, status, err) {
+                           
+                            make_alert("danger","Sorry, Something went wrong.");
+                        }
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

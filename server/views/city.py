@@ -39,5 +39,9 @@ def get_city(state):
     # returns JSON object as 
     # a dictionary
     data = json.load(f)
-    return data[state]
+    s=""
+    for i in state.split():
+        s+=i.capitalize()+" "
+    s=s.strip()
+    return data[s]
     
